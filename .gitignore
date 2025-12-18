@@ -1,0 +1,9 @@
+# Model files
+models/
+*.gguf
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
