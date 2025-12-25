@@ -6,13 +6,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const llama = await getLlama();
 
-const model = await llama.loadModel({modelPath: path.join(__dirname, "models", "hf_Qwen_Qwen3-1.7B.Q8_0.gguf")});
+const model = await llama.loadModel({modelPath: path.join(__dirname, "models", "hf_bartowski_glm-4-9b-chat.GLM-4-9B-CHAT-Q2_K.GGUF.gguf")});
 
 const context = await model.createContext();
 
 const chatSession = new LlamaChatSession({
     contextSequence: context.getSequence(),
-    systemPrompt: "You are Qwen 3 1.7B, a language model running locally on the user's machine from the file 'hf_Qwen_Qwen3-1.7B.Q8_0.gguf'. You are NOT running on any cloud service. You are a quantized model (Q8_0) being executed using node-llama-cpp. Always provide accurate information about your deployment."
+    systemPrompt: "You are GLM-4 9B Chat, a language model running locally on the user's machine from the file 'hf_bartowski_glm-4-9b-chat.GLM-4-9B-CHAT-Q2_K.GGUF.gguf'. You are NOT running on any cloud service. You are a quantized model (Q2_K) being executed using node-llama-cpp. Always provide accurate information about your deployment."
 });
 
 const q1 = "Hi there, do you know which model you are currently running on ?";
